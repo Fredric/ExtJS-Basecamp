@@ -1,5 +1,8 @@
 Ext.Loader.setPath('Ext', 'lib/ext/src');
 Ext.require('Ext.util.History');
+Ext.require('Ext.data.*.Json');
+Ext.require('Ext.layout.container.Border');
+
 
 Ext.application({
     name: 'BASECAMP',
