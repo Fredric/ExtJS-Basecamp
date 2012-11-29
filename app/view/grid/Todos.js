@@ -8,7 +8,7 @@ Ext.define('BASECAMP.view.grid.Todos', {
     },
     columns: [
         {header: '', dataIndex: 'content', width: 200, renderer: function (v) {
-            return '<b>' + v + '</b>'
+            return '<b>' + v + '</b>';
         }},
         {header: '', dataIndex: 'description', flex: 1},
         {header: '', dataIndex: 'created_at'},

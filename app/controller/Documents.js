@@ -13,14 +13,14 @@ Ext.define('BASECAMP.controller.Documents', {
         this.application.on('onProjectSelect', this.initUI, this);
     },
     initUI: function (project) {
-        this.getDocumentsUI().setTitle('Documents (' + project.data.documents.count + ')')
-        this.loadDocuments(project)
+        this.getDocumentsUI().setTitle('Documents (' + project.data.documents.count + ')');
+        this.loadDocuments(project);
     },
     loadDocuments: function (project) {
         this.getDocumentsStore().load({
             params: {
                 project: project.get('id')
             }
-        })
+        });
     }
 });

@@ -7,7 +7,7 @@ Ext.define('BASECAMP.view.tree.TodoLists', {
             fields:[
                 {name:'name', type:'string'},
                 {name:'text', type:'string', convert:function(v, record){
-                    return record.get('name')
+                    return record.get('name');
                 }}
 
 
@@ -20,9 +20,9 @@ Ext.define('BASECAMP.view.tree.TodoLists', {
                         type: 'json'
                     }
                 }
-        })
+        });
 
-        this.callParent()
+        this.callParent();
     }
 
 });

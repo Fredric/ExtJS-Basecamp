@@ -13,4 +13,4 @@ Ext.define('BASECAMP.view.panel.Uploads', {
 
 
     ]
-})
+});

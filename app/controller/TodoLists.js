@@ -21,17 +21,17 @@ Ext.define('BASECAMP.controller.TodoLists', {
         this.application.on('onProjectSelect', this.initUI, this);
     },
     initUI: function (project) {
-        this.getTodoListUI().setTitle('Todolists (' + project.data.todolists.remaining_count + ')')
+        this.getTodoListUI().setTitle('Todolists (' + project.data.todolists.remaining_count + ')');
         this.getTodoListUI().down('#completed').getStore().removeAll();
         this.getTodoListUI().down('#remaining').getStore().removeAll();
-        this.loadTodoLists(project)
+        this.loadTodoLists(project);
     },
     loadTodoLists: function (record) {
         this.getTodoListsStore().load({
             params: {
                 project: record.get('id')
             }
-        })
+        });
     },
     openTodo: function (view, record) {
         var t = Ext.ModelManager.getModel('BASECAMP.model.TodoList');
@@ -40,8 +40,8 @@ Ext.define('BASECAMP.controller.TodoLists', {
                 project: view.up('projectpanel').getProject().get('id')
             },
             success: function (todolist) {
-                this.getTodoListUI().down('#remaining').reconfigure(todolist.remaining())
-                this.getTodoListUI().down('#completed').reconfigure(todolist.completed())
+                this.getTodoListUI().down('#remaining').reconfigure(todolist.remaining());
+                this.getTodoListUI().down('#completed').reconfigure(todolist.completed());
             },
             scope: this
         });

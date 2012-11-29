@@ -13,14 +13,14 @@ Ext.define('BASECAMP.controller.Topics', {
         this.application.on('onProjectSelect', this.initUI, this);
     },
     initUI: function (project) {
-        this.getTopicsUI().setTitle('Topics (' + project.data.topics.count + ')')
-        this.loadTopics(project)
+        this.getTopicsUI().setTitle('Topics (' + project.data.topics.count + ')');
+        this.loadTopics(project);
     },
     loadTopics: function (project) {
         this.getTopicsStore().load({
             params: {
                 project: project.get('id')
             }
-        })
+        });
     }
 });

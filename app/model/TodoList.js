@@ -16,7 +16,7 @@ Ext.define('BASECAMP.model.TodoList', {
         {name: 'creator', type: 'string', mapping:'creator.name'},
         {name: 'creatoricon', type: 'string', mapping:'creator.avatar_url'},
         {name: 'completed_text', type: 'string', convert:function(v, record){
-            return '(' + record.get('completed_count') + '/' + record.get('remaining_count') + ')'
+            return '(' + record.get('completed_count') + '/' + record.get('remaining_count') + ')';
         }}
     ],
     proxy: {

@@ -6,11 +6,11 @@ Ext.define('BASECAMP.controller.Navigation', {
     },
 
     initPaths: function () {
-        var me = this
+        var me = this;
         Path.map("#/:project/:tab").to(function () {
-            console.log('here')
-            me.getController('Projects').setProjectById(this.params.project, function (project) {
-                me.getController('Projects').setTab(parseFloat(this.params.tab))
+
+            me.getController('Projects').setProjectById(this.params.project, function () {
+                me.getController('Projects').setTab(parseFloat(this.params.tab));
             }, this);
         });
 
@@ -23,4 +23,4 @@ Ext.define('BASECAMP.controller.Navigation', {
 
 
 
-})
+});

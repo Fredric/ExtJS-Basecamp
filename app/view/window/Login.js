@@ -9,4 +9,4 @@ Ext.define('BASECAMP.view.window.Login',{
     buttons:[
         {text:'Login'}
     ]
-})
+});
