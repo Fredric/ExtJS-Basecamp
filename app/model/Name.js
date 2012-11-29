@@ -5,16 +5,6 @@ Ext.define('BASECAMP.model.Name', {
         {name: 'name', type: 'string'}
 
     ]
-    /*
-     ,
-     proxy: {
-     type: 'ajax',
-     url: 'data/todos.php',
-     reader: {
-     type: 'json',
-     root:'todos.remaining'
-     }
-     }
-     */
+
 });
 
