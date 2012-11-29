@@ -13,7 +13,7 @@ Ext.define('BASECAMP.controller.Uploads', {
         this.application.on('onProjectSelect', this.initUI, this);
     },
     initUI: function (project) {
-        this.getUploadsUI().setTitle('Files (' + project.data.attachments.count + ')');
+        this.getUploadsUI().setTitle('Files (' + project.get('attachments').count + ')');
         this.loadUploads(project);
     },
     loadUploads: function (project) {

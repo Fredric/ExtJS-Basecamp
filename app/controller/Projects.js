@@ -19,8 +19,8 @@ Ext.define('BASECAMP.controller.Projects', {
                 select: {
                     fn: this.selectProject
                 },
-                afterrender:function(){
-                   this.getStore('Projects').load();
+                afterrender: function () {
+                    this.getStore('Projects').load();
                 }
             },
             'projectpanel': {
@@ -40,15 +40,15 @@ Ext.define('BASECAMP.controller.Projects', {
         Ext.util.History.add('/' + p.getProject().get('id') + "/" + p.items.indexOf(newItem), true, true);
     },
     setProjectById: function (id, callBack, scope) {
+        var me = this;
         if (!this.getProjectPanel() || !this.getProjectPanel().getProject() || this.getProjectPanel().getProject().get('id') !== id) {
             var p = Ext.ModelManager.getModel('BASECAMP.model.Project');
             p.load(id, {
                 success: function (project) {
-                    this.getProjectPanel().setProject(project);
-                    this.application.fireEvent('onProjectSelect', project);
+                    me.getProjectPanel().setProject(project);
+                    me.application.fireEvent('onProjectSelect', project);
                     callBack.call(scope, project);
-                },
-                scope: this
+                }
             });
         } else {
             callBack.call(scope, this.getProjectPanel().getProject());

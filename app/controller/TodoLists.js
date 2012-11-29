@@ -21,7 +21,7 @@ Ext.define('BASECAMP.controller.TodoLists', {
         this.application.on('onProjectSelect', this.initUI, this);
     },
     initUI: function (project) {
-        this.getTodoListUI().setTitle('Todolists (' + project.data.todolists.remaining_count + ')');
+        this.getTodoListUI().setTitle('Todolists (' + project.get('todolists').remaining_count + ')');
         this.getTodoListUI().down('#completed').getStore().removeAll();
         this.getTodoListUI().down('#remaining').getStore().removeAll();
         this.loadTodoLists(project);

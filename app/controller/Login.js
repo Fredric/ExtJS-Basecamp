@@ -36,9 +36,8 @@ Ext.define('BASECAMP.controller.Login', {
             scope:this
         });
     },
-    isLoggedIn:function(user){
+    isLoggedIn:function(){
 
-        BasecampUser = user;
         this.getController('Navigation').initPaths();
         Ext.create('BASECAMP.view.Viewport');
 
@@ -63,7 +62,7 @@ Ext.define('BASECAMP.controller.Login', {
 
                 }
             },
-            failure: function (response) {
+            failure: function () {
 
             },
             scope:this

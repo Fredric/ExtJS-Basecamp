@@ -27,8 +27,5 @@ Ext.define('BASECAMP.view.panel.Project',{
         {
             title:'Dates'
         }
-    ],
-    applyProject:function(project){
-        return project;
-    }
+    ]
 });
