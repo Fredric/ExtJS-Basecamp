@@ -8,7 +8,7 @@ Ext.application({
     launch: function () {
         Ext.util.History.init();
 
-        this.getController('Login').checkLogin()
+        this.getController('Login').checkLogin();
 
 
     }
