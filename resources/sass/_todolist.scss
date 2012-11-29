@@ -1,0 +1,51 @@
+.todolist-wrap{
+  min-height: 32px;
+  background-image: url(../images/icons/todolist_24x24.png);
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+  padding-left:35px;
+  border-width:1px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-right:4px;
+  @include border-radius(5px);
+
+
+}
+.todolist-name{
+  font-weight:bold;
+}
+.todolist-description{
+  color:#666666;
+}
+.todolist-person{
+  float:right;
+  min-width:150;
+  position:relative;
+  overflow:hidden;
+  top:0px;
+
+  color:#666666;
+}
+.todolist-person IMG{
+  vertical-align:middle;
+  height:24px;
+  width:24px;
+}
+.todolist-person SPAN{
+  margin-left:4px;
+}
+
+.todolist-selected{
+
+  background-color: #c0c0c0;
+}
+
+.todolist-over{
+  cursor: pointer;
+  border-color: #cccccc;
+
+
+}

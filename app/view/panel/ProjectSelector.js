@@ -1,0 +1,21 @@
+Ext.define('BASECAMP.view.panel.ProjectSelector', {
+    extend: 'Ext.Panel',
+    alias: 'widget.projectselector',
+    layout: {
+        type: 'hbox'
+    },
+    items: [
+       {
+            margins:'10 10 10 10',
+            width:400,
+            xtype: 'combo',
+            store: 'Projects',
+            displayField:'name',
+           valueField:'id',
+            listConfig:{
+                itemTpl:'<b>{name}</b><br>{description}'
+            }
+        }
+
+    ]
+});
