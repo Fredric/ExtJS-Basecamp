@@ -23,4 +23,4 @@ Ext.define('BASECAMP.view.panel.TodoLists', {
         }
 
     ]
-})
+});

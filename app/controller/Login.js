@@ -30,7 +30,7 @@ Ext.define('BASECAMP.controller.Login', {
                 if (responseObject.success === false) {
                     this.getLogin().show();
                 }else{
-                    this.isLoggedIn(responseObject.user)
+                    this.isLoggedIn(responseObject.user);
                 }
             },
             scope:this
@@ -59,12 +59,12 @@ Ext.define('BASECAMP.controller.Login', {
                 if (user !== null) {
 
                     btn.up('window').close();
-                    this.isLoggedIn(user)
+                    this.isLoggedIn(user);
 
                 }
             },
             failure: function (response) {
-                console.log('error', response)
+
             },
             scope:this
         });

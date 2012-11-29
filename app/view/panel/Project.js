@@ -29,6 +29,6 @@ Ext.define('BASECAMP.view.panel.Project',{
         }
     ],
     applyProject:function(project){
-        return project
+        return project;
     }
-})
+});

@@ -29,7 +29,7 @@ Ext.define('BASECAMP.view.grid.TodoLists', {
         this.callParent();
         this.on('select',function(view, record){
             this.fireEvent('onSelectTodoList', this, record);
-        }, this)
+        }, this);
     }
 
 

@@ -31,21 +31,21 @@ Ext.define('BASECAMP.controller.Projects', {
         });
         this.getProjectsStore().on('load', function () {
             if (this.getProjectPanel() && this.getProjectPanel().getProject()) {
-                this.getProjectCombo().setValue(this.getProjectPanel().getProject().get('id'))
+                this.getProjectCombo().setValue(this.getProjectPanel().getProject().get('id'));
             }
-        }, this)
+        }, this);
     },
     navigateToTab: function (tabcard, newItem) {
         var p = this.getProjectPanel();
         Ext.util.History.add('/' + p.getProject().get('id') + "/" + p.items.indexOf(newItem), true, true);
     },
     setProjectById: function (id, callBack, scope) {
-        if (!this.getProjectPanel() || !this.getProjectPanel().getProject() || this.getProjectPanel().getProject().get('id') != id) {
+        if (!this.getProjectPanel() || !this.getProjectPanel().getProject() || this.getProjectPanel().getProject().get('id') !== id) {
             var p = Ext.ModelManager.getModel('BASECAMP.model.Project');
             p.load(id, {
                 success: function (project) {
-                    this.getProjectPanel().setProject(project)
-                    this.application.fireEvent('onProjectSelect', project)
+                    this.getProjectPanel().setProject(project);
+                    this.application.fireEvent('onProjectSelect', project);
                     callBack.call(scope, project);
                 },
                 scope: this
@@ -55,11 +55,11 @@ Ext.define('BASECAMP.controller.Projects', {
         }
     },
     setTab: function (tab) {
-        this.getProjectPanel().layout.setActiveItem(tab)
+        this.getProjectPanel().layout.setActiveItem(tab);
     },
     selectProject: function (combo, records) {
         var p = this.getProjectPanel();
-        var s = p.items.indexOf(p.getLayout().getActiveItem())
+        var s = p.items.indexOf(p.getLayout().getActiveItem());
         Ext.util.History.add('/' + records[0].get('id') + "/" + s, true, true);
     }
 });
