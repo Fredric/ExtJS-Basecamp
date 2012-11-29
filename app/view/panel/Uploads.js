@@ -7,7 +7,7 @@ Ext.define('BASECAMP.view.panel.Uploads', {
     },
     items: [
         {
-            flex:1,
+            flex: 1,
             xtype: 'uploadsgrid'
         }
 

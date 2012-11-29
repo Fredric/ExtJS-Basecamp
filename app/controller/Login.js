@@ -43,7 +43,7 @@ Ext.define('BASECAMP.controller.Login', {
 
     doLogin: function (loginWindow) {
 
-        var loginMask = new Ext.LoadMask(loginWindow, {msg:"Login..."});
+        var loginMask = new Ext.LoadMask(loginWindow, {msg: "Login..."});
         loginMask.show();
 
         var username = loginWindow.down('#username').getValue();

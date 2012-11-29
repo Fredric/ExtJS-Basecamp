@@ -6,8 +6,8 @@ Ext.define('BASECAMP.view.Viewport', {
     config: {
         items: [
             {
-                region:'north',
-                xtype:'projectselector'
+                region: 'north',
+                xtype: 'projectselector'
             },
             {
                 xtype: 'panel',
@@ -19,7 +19,7 @@ Ext.define('BASECAMP.view.Viewport', {
                 items: [
                     {
                         xtype: 'projectpanel',
-                        margins:'10 10 10 10',
+                        margins: '10 10 10 10',
                         flex: 1
                     }
 

@@ -37,7 +37,7 @@ Ext.define('BASECAMP.view.window.Login', {
         ];
 
         me.callParent();
-        me.on('show', function(){
+        me.on('show', function () {
             me.down('#username').focus(true, 100);
         });
     }

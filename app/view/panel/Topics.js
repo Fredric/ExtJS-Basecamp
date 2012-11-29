@@ -7,7 +7,7 @@ Ext.define('BASECAMP.view.panel.Topics', {
     },
     items: [
         {
-            flex:1,
+            flex: 1,
             xtype: 'topicsgrid'
         }
 
