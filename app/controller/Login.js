@@ -1,22 +1,20 @@
 Ext.define('BASECAMP.controller.Login', {
     extend: 'Ext.app.Controller',
-    views: ['window.Login'],
+    views: ['window.Login', 'Viewport'],
     refs: [
         {
             ref: 'login',
             selector: 'login',
-            xtype:'login',
+            xtype: 'login',
             autoCreate: true
         }
     ],
 
     init: function () {
         this.control({
-            'login button': {
-                click: {
-                    fn: this.doLogin,
-                    buffer: 300
-                }
+            'login': {
+                loginButtonClicked: this.doLogin,
+                enterPressInField: this.doLogin
             }
         });
 
@@ -29,23 +27,27 @@ Ext.define('BASECAMP.controller.Login', {
                 var responseObject = Ext.JSON.decode(response.responseText);
                 if (responseObject.success === false) {
                     this.getLogin().show();
-                }else{
+                } else {
                     this.isLoggedIn(responseObject.user);
                 }
             },
-            scope:this
+            scope: this
         });
     },
-    isLoggedIn:function(){
+    isLoggedIn: function () {
 
         this.getController('Navigation').initPaths();
         Ext.create('BASECAMP.view.Viewport');
 
     },
 
-    doLogin: function (btn) {
-        var username = btn.up('login').down('#username').getValue();
-        var password = btn.up('login').down('#password').getValue();
+    doLogin: function (loginWindow) {
+
+        var loginMask = new Ext.LoadMask(loginWindow, {msg:"Login..."});
+        loginMask.show();
+
+        var username = loginWindow.down('#username').getValue();
+        var password = loginWindow.down('#password').getValue();
 
         Ext.Ajax.request({
             url: 'data/login.php',
@@ -54,18 +56,19 @@ Ext.define('BASECAMP.controller.Login', {
                 pass: password
             },
             success: function (response) {
+                loginMask.hide();
                 var user = Ext.JSON.decode(response.responseText, true);
                 if (user !== null) {
 
-                    btn.up('window').close();
+                    loginWindow.close();
                     this.isLoggedIn(user);
 
                 }
             },
             failure: function () {
-
+                loginMask.hide();
             },
-            scope:this
+            scope: this
         });
 
 
