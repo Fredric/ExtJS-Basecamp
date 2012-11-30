@@ -11448,9 +11448,10 @@ Ext.define('Ext.data.reader.Reader', {
      * @return {Object} The root
      */
     getAssociatedDataRoot: function(data, associationName) {
+
         return data[associationName];
     },
-    
+
     getFields: function() {
         return this.model.prototype.fields.items;
     },
@@ -11705,6 +11706,19 @@ Ext.define('Ext.data.reader.Reader', {
         }),
         recordDataExtractorTemplate: new Ext.XTemplate(proto.recordDataExtractorTemplate)
     });
+});
+
+Ext.define('Overrides.data.reader.Reader', {
+    override: 'Ext.data.reader.Reader',
+
+    getAssociatedDataRoot: function (data, associationName) {
+        Ext.each(associationName.split('.'), function (p) {
+            data = data[p] || data;
+        });
+        return data;
+    }
+
+
 });
 
 /**
@@ -46017,6 +46031,7 @@ Ext.define('BASECAMP.view.panel.TodoLists', {
     },
     items: [
         {
+            flex:1,
             xtype: 'todolistgrid'
         },
         {
@@ -55421,17 +55436,18 @@ Ext.define('BASECAMP.controller.Login', {
 
     },
     checkLogin: function () {
+        var me = this;
+
         Ext.Ajax.request({
             url: 'data/isloggedin.php',
-            success: function (response) {
-                var responseObject = Ext.JSON.decode(response.responseText);
+            success: function (resp) {
+                var responseObject = Ext.JSON.decode(resp.responseText);
                 if (responseObject.success === false) {
-                    this.getLogin().show();
+                    me.getLogin().show();
                 } else {
-                    this.isLoggedIn(responseObject.user);
+                    me.isLoggedIn(responseObject.user);
                 }
-            },
-            scope: this
+            }
         });
     },
     isLoggedIn: function () {

@@ -210,6 +210,11 @@
                     "path": "lib/ext/src/data/reader/"
                 },
                 {
+                    "clsName": "Overrides.data.reader.Reader",
+                    "name": "Reader.js",
+                    "path": "lib/overrides/data/reader/"
+                },
+                {
                     "clsName": "Ext.data.reader.Json",
                     "name": "Json.js",
                     "path": "lib/ext/src/data/reader/"
