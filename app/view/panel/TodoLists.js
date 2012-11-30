@@ -7,6 +7,7 @@ Ext.define('BASECAMP.view.panel.TodoLists', {
     },
     items: [
         {
+            flex:1,
             xtype: 'todolistgrid'
         },
         {
