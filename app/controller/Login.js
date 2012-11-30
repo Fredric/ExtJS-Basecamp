@@ -21,17 +21,18 @@ Ext.define('BASECAMP.controller.Login', {
 
     },
     checkLogin: function () {
+        var me = this;
+
         Ext.Ajax.request({
             url: 'data/isloggedin.php',
-            success: function (response) {
-                var responseObject = Ext.JSON.decode(response.responseText);
+            success: function (resp) {
+                var responseObject = Ext.JSON.decode(resp.responseText);
                 if (responseObject.success === false) {
-                    this.getLogin().show();
+                    me.getLogin().show();
                 } else {
-                    this.isLoggedIn(responseObject.user);
+                    me.isLoggedIn(responseObject.user);
                 }
-            },
-            scope: this
+            }
         });
     },
     isLoggedIn: function () {
