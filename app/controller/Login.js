@@ -1,6 +1,7 @@
 Ext.define('BASECAMP.controller.Login', {
     extend: 'Ext.app.Controller',
     views: ['window.Login', 'Viewport'],
+    models:['User'],
     refs: [
         {
             ref: 'login',
@@ -35,7 +36,10 @@ Ext.define('BASECAMP.controller.Login', {
             }
         });
     },
-    isLoggedIn: function () {
+    isLoggedIn: function (user) {
+
+        BASECAMP.currentUser = Ext.create('BASECAMP.model.User',user);
+
 
         this.getController('Navigation').initPaths();
         Ext.create('BASECAMP.view.Viewport');
@@ -60,10 +64,8 @@ Ext.define('BASECAMP.controller.Login', {
                 loginMask.hide();
                 var user = Ext.JSON.decode(response.responseText, true);
                 if (user !== null) {
-
                     loginWindow.close();
                     this.isLoggedIn(user);
-
                 }
             },
             failure: function () {
@@ -71,7 +73,5 @@ Ext.define('BASECAMP.controller.Login', {
             },
             scope: this
         });
-
-
     }
 });

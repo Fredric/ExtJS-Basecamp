@@ -1,9 +1,5 @@
 Ext.define('BASECAMP.controller.Navigation', {
     extend: 'Ext.app.Controller',
-    init: function () {
-        //this.initPaths();
-
-    },
 
     initPaths: function () {
         var me = this;
