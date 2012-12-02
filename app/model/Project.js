@@ -23,5 +23,10 @@ Ext.define('BASECAMP.model.Project', {
         reader: {
             type: 'json'
         }
+    },
+    isOpen:function(){
+        debugger
+
     }
+
 });

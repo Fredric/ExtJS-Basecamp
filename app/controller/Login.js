@@ -38,7 +38,7 @@ Ext.define('BASECAMP.controller.Login', {
     },
     isLoggedIn: function (user) {
 
-        BASECAMP.currentUser = Ext.create('BASECAMP.model.User',user);
+        this.getApplication().currentUser = Ext.create('BASECAMP.model.User',user);
 
 
         this.getController('Navigation').initPaths();

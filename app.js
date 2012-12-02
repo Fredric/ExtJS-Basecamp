@@ -24,8 +24,19 @@ Ext.application({
         'Documents'
     ],
 
+    config:{
+      project:null,
+      user:null
+    },
+
     launch: function () {
         Ext.util.History.init();
         this.getController('Login').checkLogin();
+    },
+
+    applyProject:function(project){
+        var me = this;
+        me.fireEvent('onProjectSelect', project);
+        return project;
     }
 });

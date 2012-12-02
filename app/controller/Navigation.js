@@ -5,7 +5,7 @@ Ext.define('BASECAMP.controller.Navigation', {
         var me = this;
         Path.map("#/:project/:tab").to(function () {
 
-            me.getController('Projects').setProjectById(this.params.project, function () {
+            me.getController('Projects').setProjectById(parseFloat(this.params.project), function () {
                 me.getController('Projects').setTab(parseFloat(this.params.tab));
             }, this);
         });

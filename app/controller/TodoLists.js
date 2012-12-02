@@ -10,40 +10,38 @@ Ext.define('BASECAMP.controller.TodoLists', {
         }
     ],
     init: function () {
-        this.control({
+        var me = this;
+        me.control({
             'todolistgrid': {
                 onSelectTodoList: {
-                    fn: this.openTodo,
+                    fn: me.openTodo,
                     buffer: 300
                 }
             }
         });
-        this.application.on('onProjectSelect', this.initUI, this);
+        me.application.on('onProjectSelect', me.initUI, me);
     },
     initUI: function (project) {
-        this.getTodoListUI().setTitle('Todolists (' + project.get('todolists').remaining_count + ')');
-        this.getTodoListUI().down('#completed').getStore().removeAll();
-        this.getTodoListUI().down('#remaining').getStore().removeAll();
-        this.loadTodoLists(project);
-    },
-    loadTodoLists: function (record) {
-        this.getTodoListsStore().load({
+        var me = this;
+        me.getTodoListUI().setTitle('Todolists (' + project.get('todolists').remaining_count + ')');
+        me.getTodoListUI().down('#completed').getStore().removeAll();
+        me.getTodoListUI().down('#remaining').getStore().removeAll();
+        me.getTodoListsStore().load({
             params: {
-                project: record.get('id')
+                project: project.getId()
             }
         });
     },
     openTodo: function (view, record) {
-        var t = Ext.ModelManager.getModel('BASECAMP.model.TodoList');
-        t.load(record.get('id'), {
+        var me = this;
+        Ext.ModelManager.getModel('BASECAMP.model.TodoList').load(record.getId(), {
             params: {
-                project: view.up('projectpanel').getProject().get('id')
+                project: me.application.getProject().getId()
             },
             success: function (todolist) {
-                this.getTodoListUI().down('#remaining').reconfigure(todolist.remaining());
-                this.getTodoListUI().down('#completed').reconfigure(todolist.completed());
-            },
-            scope: this
+                me.getTodoListUI().down('#remaining').reconfigure(todolist.remaining());
+                me.getTodoListUI().down('#completed').reconfigure(todolist.completed());
+            }
         });
     }
 });

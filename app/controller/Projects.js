@@ -14,10 +14,12 @@ Ext.define('BASECAMP.controller.Projects', {
         }
     ],
     init: function () {
-        this.control({
+        var me = this;
+
+        me.control({
             'projectselector > combo': {
                 select: {
-                    fn: this.selectProject
+                    fn: this.selectProjectByCombo
                 },
                 afterrender: function () {
                     this.getStore('Projects').load();
@@ -29,35 +31,44 @@ Ext.define('BASECAMP.controller.Projects', {
                 }
             }
         });
-        this.getProjectsStore().on('load', function () {
-            if (this.getProjectPanel() && this.getProjectPanel().getProject()) {
-                this.getProjectCombo().setValue(this.getProjectPanel().getProject().get('id'));
+        me.getProjectsStore().on('load', function () {
+            if (me.application.getProject() !== null) {
+                me.getProjectCombo().setValue(me.application.getProject().getId());
             }
-        }, this);
+        });
+
     },
     navigateToTab: function (tabcard, newItem) {
-        var p = this.getProjectPanel();
-        Ext.util.History.add('/' + p.getProject().get('id') + "/" + p.items.indexOf(newItem), true, true);
-    },
-    setProjectById: function (id, callBack, scope) {
         var me = this;
-        if (!this.getProjectPanel() || !this.getProjectPanel().getProject() || this.getProjectPanel().getProject().get('id') !== id) {
-            var p = Ext.ModelManager.getModel('BASECAMP.model.Project');
-            p.load(id, {
+
+        Ext.util.History.add('/' + me.application.getProject().getId() + "/" + me.getProjectPanel().items.indexOf(newItem), true, true);
+    },
+    /**
+     * Sets Project by its id string. Returns the project object.
+     * If project with this id already is set, it just returns the project object.
+     * @param id
+     * @param callBack
+     * @param scope
+     */
+    setProjectById: function (id, callBack, scope) {
+        var me = this,
+            app = me.application;
+
+        if (app.getProject() === null || app.getProject().getId() !== id) {
+            Ext.ModelManager.getModel('BASECAMP.model.Project').load(id, {
                 success: function (project) {
-                    me.getProjectPanel().setProject(project);
-                    me.application.fireEvent('onProjectSelect', project);
-                    callBack.call(scope, project);
+                    app.setProject(project);
+                    callBack.call(scope, app.getProject());
                 }
             });
         } else {
-            callBack.call(scope, this.getProjectPanel().getProject());
+            callBack.call(scope, app.getProject());
         }
     },
     setTab: function (tab) {
         this.getProjectPanel().layout.setActiveItem(tab);
     },
-    selectProject: function (combo, records) {
+    selectProjectByCombo: function (combo, records) {
         var p = this.getProjectPanel();
         var s = p.items.indexOf(p.getLayout().getActiveItem());
         Ext.util.History.add('/' + records[0].get('id') + "/" + s, true, true);
