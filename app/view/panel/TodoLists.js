@@ -5,23 +5,18 @@ Ext.define('BASECAMP.view.panel.TodoLists', {
         type: 'hbox',
         align: 'stretch'
     },
-    items: [
-        {
-            flex:1,
-            xtype: 'todolistgrid'
-        },
-        {
-            xtype: 'container',
-            flex: 1,
-            layout: {
-                type: 'vbox',
-                align: 'stretch'
-            },
-            items: [
-                {flex: 1, xtype: 'todogrid', itemId: 'remaining'},
-                {flex: 1, xtype: 'todogrid', itemId: 'completed'}
-            ]
-        }
+    initComponent: function () {
+        var me = this;
 
-    ]
+        me.modal = Ext.create('BASECAMP.view.window.TodoList');
+
+        me.items = [
+            {
+                flex: 1,
+                xtype: 'todolistgrid'
+            }
+        ];
+        me.callParent();
+    }
+
 });

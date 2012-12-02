@@ -40,8 +40,7 @@ Ext.define('BASECAMP.controller.Projects', {
     },
     navigateToTab: function (tabcard, newItem) {
         var me = this;
-
-        Ext.util.History.add('/' + me.application.getProject().getId() + "/" + me.getProjectPanel().items.indexOf(newItem), true, true);
+         Ext.util.History.add('/' + me.application.getProject().getId() + "/" + me.getProjectPanel().items.indexOf(newItem), true, true);
     },
     /**
      * Sets Project by its id string. Returns the project object.
@@ -66,7 +65,9 @@ Ext.define('BASECAMP.controller.Projects', {
         }
     },
     setTab: function (tab) {
+        this.application.setTab(tab);
         this.getProjectPanel().layout.setActiveItem(tab);
+
     },
     selectProjectByCombo: function (combo, records) {
         var p = this.getProjectPanel();

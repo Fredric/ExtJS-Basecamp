@@ -26,7 +26,8 @@ Ext.application({
 
     config:{
       project:null,
-      user:null
+      user:null,
+      tab:null
     },
 
     launch: function () {

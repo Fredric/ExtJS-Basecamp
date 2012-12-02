@@ -5,7 +5,8 @@ Ext.define('BASECAMP.store.Projects', {
         type: 'ajax',
         url: 'data/projects.php',
         reader: {
-            type: 'json'
+            type: 'json',
+            root:'data'
         }
     }
 

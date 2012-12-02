@@ -10,6 +10,16 @@ Ext.define('BASECAMP.controller.Navigation', {
             }, this);
         });
 
+        Path.map("#/:project/:tab/todolist/:id").to(function () {
+
+            me.getController('Projects').setProjectById(parseFloat(this.params.project), function () {
+                me.getController('Projects').setTab(parseFloat(this.params.tab));
+                me.getController('TodoLists').openTodo(this.params.id);
+            }, this);
+
+
+        });
+
         Path.root('#');
         Path.rescue(function () {
 
