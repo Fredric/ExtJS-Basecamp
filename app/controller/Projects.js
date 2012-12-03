@@ -1,33 +1,40 @@
 Ext.define('BASECAMP.controller.Projects', {
-    extend: 'Ext.app.Controller',
-    views: ['panel.ProjectSelector', 'panel.Project'],
-    models: ['Project'],
-    stores: ['Projects'],
-    refs: [
+    extend:'Ext.app.Controller',
+    views:['panel.ProjectSelector', 'panel.Project'],
+    models:['Project'],
+    stores:['Projects'],
+    refs:[
         {
-            ref: 'projectCombo',
-            selector: 'projectselector > combo'
+            ref:'projectCombo',
+            selector:'projectselector > combo'
         },
         {
-            ref: 'projectPanel',
-            selector: 'projectpanel'
+            ref:'projectPanel',
+            selector:'projectpanel'
         }
     ],
-    init: function () {
+    init:function () {
         var me = this;
 
         me.control({
-            'projectselector > combo': {
-                select: {
-                    fn: this.selectProjectByCombo
+            'projectselector > combo':{
+                select:{
+                    fn:this.selectProjectByCombo
                 },
-                afterrender: function () {
+                afterrender:function () {
                     this.getStore('Projects').load();
                 }
-            },
-            'projectpanel': {
-                tabchange: {
-                    fn: this.navigateToTab
+            }
+            /*
+             ,
+             'projectpanel': {
+             tabchange: {
+             fn: this.navigateToTab
+             }
+             }*/,
+            'projectpanel tab':{
+                click:{
+                    fn:this.navigateToTab
                 }
             }
         });
@@ -38,9 +45,9 @@ Ext.define('BASECAMP.controller.Projects', {
         });
 
     },
-    navigateToTab: function (tabcard, newItem) {
+    navigateToTab:function (tabcard) {
         var me = this;
-         Ext.util.History.add('/' + me.application.getProject().getId() + "/" + me.getProjectPanel().items.indexOf(newItem), true, true);
+        Ext.util.History.add('/' + me.application.getProject().getId() + "/" + me.getProjectPanel().items.indexOf(tabcard.card), true, true);
     },
     /**
      * Sets Project by its id string. Returns the project object.
@@ -49,13 +56,13 @@ Ext.define('BASECAMP.controller.Projects', {
      * @param callBack
      * @param scope
      */
-    setProjectById: function (id, callBack, scope) {
+    setProjectById:function (id, callBack, scope) {
         var me = this,
             app = me.application;
 
         if (app.getProject() === null || app.getProject().getId() !== id) {
             Ext.ModelManager.getModel('BASECAMP.model.Project').load(id, {
-                success: function (project) {
+                success:function (project) {
                     app.setProject(project);
                     callBack.call(scope, app.getProject());
                 }
@@ -64,12 +71,12 @@ Ext.define('BASECAMP.controller.Projects', {
             callBack.call(scope, app.getProject());
         }
     },
-    setTab: function (tab) {
+    setTab:function (tab) {
         this.application.setTab(tab);
         this.getProjectPanel().layout.setActiveItem(tab);
 
     },
-    selectProjectByCombo: function (combo, records) {
+    selectProjectByCombo:function (combo, records) {
         var p = this.getProjectPanel();
         var s = p.items.indexOf(p.getLayout().getActiveItem());
         Ext.util.History.add('/' + records[0].get('id') + "/" + s, true, true);
