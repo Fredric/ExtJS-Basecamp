@@ -1,11 +1,11 @@
 Ext.define('BASECAMP.controller.TodoLists', {
-    extend: 'Ext.app.Controller',
-    views: ['grid.TodoLists', 'grid.Todos', 'panel.TodoLists'],
+    extend: 'Abstract.controller.Navigation',
+    views: ['grid.TodoLists', 'grid.Todos', 'panel.TodoLists','window.TodoList'],
     models: ['TodoList', 'Todo', 'Name'],
     stores: ['TodoLists', 'Todos'],
     refs: [
         {
-            ref: 'todoListUI',
+            ref: 'UI',
             selector: 'todolists'
         }
     ],
@@ -14,46 +14,45 @@ Ext.define('BASECAMP.controller.TodoLists', {
         me.control({
             'todolistgrid': {
                 onSelectTodoList: {
-                    fn: me.navigateToModal,
+                    fn: me.navigateOpenModal,
                     buffer: 300
                 }
+            },
+            'todolistmodal':{
+                hide:me.navigateCloseModal
             }
+
         });
+
         me.application.on('onProjectSelect', me.initUI, me);
+
     },
     initUI: function (project) {
         var me = this;
-        me.getTodoListUI().setTitle('Todolists (' + project.get('todolists').remaining_count + ')');
-        //me.getTodoListUI().down('#completed').getStore().removeAll();
-        //me.getTodoListUI().down('#remaining').getStore().removeAll();
+        me.getUI().setTitle('Todolists (' + project.get('todolists').remaining_count + ')');
         me.getTodoListsStore().load({
             params: {
                 project: project.getId()
             }
         });
     },
-    navigateToModal:function(view, record){
-        var app = this.application;
-        Ext.util.History.add('/' + app.getProject().getId() + "/" + app.getTab() + "/todolist/" + record.getId(), true, true);
 
-    },
-    openTodo: function (todolist_id) {
+    openModal: function (id) {
         var me = this;
-        me.getTodoListUI().modal.show();
-        Ext.ModelManager.getModel('BASECAMP.model.TodoList').load(todolist_id, {
+        me.getUI().modal.show();
+        Ext.ModelManager.getModel('BASECAMP.model.TodoList').load(id, {
             params: {
                 project: me.application.getProject().getId()
             },
             success: function (todolist) {
-                me.getTodoListUI().modal.remaining.reconfigure(todolist.remaining());
-                me.getTodoListUI().modal.completed.reconfigure(todolist.completed());
-
+                me.getUI().modal.remaining.reconfigure(todolist.remaining());
+                me.getUI().modal.completed.reconfigure(todolist.completed());
             }
         });
     },
-
-    closeTodo:function(){
-        me.getTodoListUI().modal.close();
+    closeModal:function(){
+        var me = this;
+        me.getUI().modal.close();
 
     }
 });

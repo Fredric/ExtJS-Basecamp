@@ -3,22 +3,24 @@ Ext.define('BASECAMP.controller.Navigation', {
 
     initPaths: function () {
         var me = this;
+
+         //Navigation opening a project
         Path.map("#/:project/:tab").to(function () {
-
             me.getController('Projects').setProjectById(parseFloat(this.params.project), function () {
                 me.getController('Projects').setTab(parseFloat(this.params.tab));
             }, this);
         });
 
-        Path.map("#/:project/:tab/todolist/:id").to(function () {
-
+        //Navigation opening a modal Window
+        Path.map("#/:project/:tab/:controller/:id").to(function () {
             me.getController('Projects').setProjectById(parseFloat(this.params.project), function () {
                 me.getController('Projects').setTab(parseFloat(this.params.tab));
-                me.getController('TodoLists').openTodo(this.params.id);
+                me.getController(this.params.controller).openModal(this.params.id);
             }, this);
+        }).exit(function(){
+                me.getController(this.params.controller).closeModal();
+            });
 
-
-        });
 
         Path.root('#');
         Path.rescue(function () {

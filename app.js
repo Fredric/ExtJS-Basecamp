@@ -9,6 +9,8 @@ Ext.require('Ext.layout.container.Border');
 Ext.Loader.setPath('Overrides', 'lib/overrides');
 Ext.require('Overrides.data.reader.Reader');
 
+Ext.Loader.setPath('Abstract', 'lib/abstract');
+
 
 Ext.application({
     name: 'BASECAMP',

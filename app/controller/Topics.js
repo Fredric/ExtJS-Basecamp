@@ -1,26 +1,50 @@
 Ext.define('BASECAMP.controller.Topics', {
-    extend: 'Ext.app.Controller',
-    views: ['grid.Topics', 'panel.Topics'],
-    models: ['Topic'],
-    stores: ['Topics'],
-    refs: [
+    extend:'Abstract.controller.Navigation',
+    views:['grid.Topics', 'panel.Topics', 'window.Topics'],
+    models:['Topic'],
+    stores:['Topics'],
+    refs:[
         {
-            ref: 'topicsUI',
-            selector: 'topics'
+            ref:'UI',
+            selector:'topics'
         }
     ],
-    init: function () {
-        this.application.on('onProjectSelect', this.initUI, this);
+    init:function () {
+        var me = this;
+        me.control({
+            'topicsgrid':{
+                onSelectTopic:{
+                    fn:me.navigateOpenModal,
+                    buffer:300
+                }
+            },
+            'topicsmodal':{
+                hide:me.navigateCloseModal
+            }
+
+        });
+
+        me.application.on('onProjectSelect', this.initUI, this);
     },
-    initUI: function (project) {
-        this.getTopicsUI().setTitle('Topics (' + project.get('topics').count + ')');
+    initUI:function (project) {
+        this.getUI().setTitle('Topics (' + project.get('topics').count + ')');
         this.loadTopics(project);
     },
-    loadTopics: function (project) {
+    loadTopics:function (project) {
         this.getTopicsStore().load({
-            params: {
-                project: project.get('id')
+            params:{
+                project:project.get('id')
             }
         });
+    },
+    openModal:function (id) {
+        var me = this;
+        me.getUI().modal.show();
+
+    },
+    closeModal:function () {
+        var me = this;
+        me.getUI().modal.close();
+
     }
 });
