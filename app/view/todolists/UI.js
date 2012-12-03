@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.panel.TodoLists', {
+Ext.define('BASECAMP.view.todolists.UI', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.todolists',
     layout: {
@@ -8,7 +8,7 @@ Ext.define('BASECAMP.view.panel.TodoLists', {
     initComponent: function () {
         var me = this;
 
-        me.modal = Ext.create('BASECAMP.view.window.TodoList');
+        me.modal = Ext.create('BASECAMP.view.todolists.Window');
 
         me.items = [
             {

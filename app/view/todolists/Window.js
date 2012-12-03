@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.window.TodoList', {
+Ext.define('BASECAMP.view.todolists.Window', {
     extend: 'Ext.Window',
     height:300,
     width:800,
@@ -11,8 +11,8 @@ Ext.define('BASECAMP.view.window.TodoList', {
     initComponent: function () {
         var me = this;
 
-        me.remaining = Ext.create('BASECAMP.view.grid.Todos',{title:'Remaining'});
-        me.completed = Ext.create('BASECAMP.view.grid.Todos', {title:'Completed'});
+        me.remaining = Ext.create('BASECAMP.view.todos.Grid',{title:'Remaining'});
+        me.completed = Ext.create('BASECAMP.view.todos.Grid', {title:'Completed'});
 
 
         me.items = [

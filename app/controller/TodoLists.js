@@ -1,6 +1,6 @@
 Ext.define('BASECAMP.controller.TodoLists', {
     extend: 'Abstract.controller.Navigation',
-    views: ['grid.TodoLists', 'grid.Todos', 'panel.TodoLists','window.TodoList'],
+    views: ['todolists.Grid', 'todos.Grid', 'todolists.UI','todolists.Window'],
     models: ['TodoList', 'Todo', 'Name'],
     stores: ['TodoLists', 'Todos'],
     refs: [

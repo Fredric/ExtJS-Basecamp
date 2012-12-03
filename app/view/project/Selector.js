@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.panel.ProjectSelector', {
+Ext.define('BASECAMP.view.project.Selector', {
     extend: 'Ext.Panel',
     alias: 'widget.projectselector',
     requires: ['Ext.form.field.ComboBox'],

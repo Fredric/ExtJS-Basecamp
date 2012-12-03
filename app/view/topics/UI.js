@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.panel.Topics', {
+Ext.define('BASECAMP.view.topics.UI', {
     extend:'Ext.panel.Panel',
     alias:'widget.topics',
     layout:{
@@ -8,7 +8,7 @@ Ext.define('BASECAMP.view.panel.Topics', {
     initComponent:function () {
         var me = this;
 
-        me.modal = Ext.create('BASECAMP.view.window.Topics');
+        me.modal = Ext.create('BASECAMP.view.topics.Window');
 
         me.items = [
             {

@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.window.Topics', {
+Ext.define('BASECAMP.view.topics.Window', {
     extend:'Ext.Window',
     height:300,
     width:800,

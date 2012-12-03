@@ -1,6 +1,6 @@
 Ext.define('BASECAMP.controller.Topics', {
     extend:'Abstract.controller.Navigation',
-    views:['grid.Topics', 'panel.Topics', 'window.Topics'],
+    views:['topics.Grid', 'topics.UI', 'topics.Window'],
     models:['Topic'],
     stores:['Topics'],
     refs:[

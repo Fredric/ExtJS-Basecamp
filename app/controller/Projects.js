@@ -1,6 +1,6 @@
 Ext.define('BASECAMP.controller.Projects', {
     extend:'Ext.app.Controller',
-    views:['panel.ProjectSelector', 'panel.Project'],
+    views:['project.Selector', 'project.UI'],
     models:['Project'],
     stores:['Projects'],
     refs:[

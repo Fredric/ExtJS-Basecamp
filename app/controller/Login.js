@@ -1,6 +1,6 @@
 Ext.define('BASECAMP.controller.Login', {
     extend: 'Ext.app.Controller',
-    views: ['window.Login', 'Viewport'],
+    views: ['Login', 'Viewport'],
     models:['User'],
     refs: [
         {

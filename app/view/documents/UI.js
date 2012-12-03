@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.panel.Documents', {
+Ext.define('BASECAMP.view.documents.UI', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.documents',
     layout: {

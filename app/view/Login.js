@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.window.Login', {
+Ext.define('BASECAMP.view.Login', {
     extend: 'Ext.Window',
     alias: 'widget.login',
     bodyStyle: 'padding:10px',

@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.grid.Uploads', {
+Ext.define('BASECAMP.view.uploads.Grid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.uploadsgrid',
     store: 'Uploads',

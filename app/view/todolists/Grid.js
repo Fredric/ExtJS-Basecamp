@@ -1,4 +1,4 @@
-Ext.define('BASECAMP.view.grid.TodoLists', {
+Ext.define('BASECAMP.view.todolists.Grid', {
     extend: 'Ext.view.View',
     alias: 'widget.todolistgrid',
     store: 'TodoLists',
