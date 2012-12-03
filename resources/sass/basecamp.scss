@@ -32,7 +32,14 @@ $progress-bar-background-color: #ababab;
 $tip-base-color: $base-color;
 
 //grid
-$grid-header-over-border-color: darken($base-color, 3);
+
+$grid-row-height: 30px !default;
+$grid-row-cell-color: null !default;
+$grid-row-cell-font-size: 14px !default;
+$grid-row-cell-line-height: $grid-row-cell-font-size + 8 !default;
+
+
+
 
 //toolbar
 $toolbar-background-gradient: color-stops(#e6e6e6, #efefef);
@@ -55,6 +62,10 @@ $boundlist-border-color: #b5b8c8;
 $accordion-header-background-color: #e5e5e5;
 
 //tabs
+$tab-top-border-radius: 6px 6px 0 0 !default;
+$tab-font-size: 14px !default; //11px
+$tab-height: 35px !default;
+$tab-spacing: 2px !default;
 $tab-base-color: #eaeaea;
 $tab-color-active: #333333;
 
@@ -120,7 +131,10 @@ $button-toolbar-background-gradient-color-stops-disabled: null;
 $form-field-font-size:14px;
 $form-field-height:24px;
 
+
 @import 'compass';
+
 @import 'ext4/default/all';
 @import 'icons';
 @import 'todolist';
+

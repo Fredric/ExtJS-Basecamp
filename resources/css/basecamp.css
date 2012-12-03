@@ -3677,15 +3677,15 @@ table.x-datepicker-inner {
 .x-column-header-over,
 .x-column-header-sort-ASC,
 .x-column-header-sort-DESC {
-  border-left-color: #c4c4c4;
-  border-right-color: #c4c4c4;
+  border-left-color: #d4b7b7;
+  border-right-color: #d4b7b7;
   background-image: none;
-  background-color: #c4c4c4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e8e8), color-stop(39%, #e9e8e8), color-stop(40%, #dedede), color-stop(100%, #dedede));
-  background-image: -webkit-linear-gradient(top, #e9e8e8, #e9e8e8 39%, #dedede 40%, #dedede);
-  background-image: -moz-linear-gradient(top, #e9e8e8, #e9e8e8 39%, #dedede 40%, #dedede);
-  background-image: -o-linear-gradient(top, #e9e8e8, #e9e8e8 39%, #dedede 40%, #dedede);
-  background-image: linear-gradient(top, #e9e8e8, #e9e8e8 39%, #dedede 40%, #dedede); }
+  background-color: #d4b7b7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #efe4e4), color-stop(39%, #efe4e4), color-stop(40%, #e7d8d7), color-stop(100%, #e7d8d7));
+  background-image: -webkit-linear-gradient(top, #efe4e4, #efe4e4 39%, #e7d8d7 40%, #e7d8d7);
+  background-image: -moz-linear-gradient(top, #efe4e4, #efe4e4 39%, #e7d8d7 40%, #e7d8d7);
+  background-image: -o-linear-gradient(top, #efe4e4, #efe4e4 39%, #e7d8d7 40%, #e7d8d7);
+  background-image: linear-gradient(top, #efe4e4, #efe4e4 39%, #e7d8d7 40%, #e7d8d7); }
 
 /* line 135, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-nlg .x-grid-header-ct,
@@ -3750,7 +3750,7 @@ table.x-datepicker-inner {
   vertical-align: top; }
   /* line 199, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
   .x-grid-row .x-grid-cell {
-    font: normal 11px/15px tahoma, arial, verdana, sans-serif;
+    font: normal 14px/22px tahoma, arial, verdana, sans-serif;
     background-color: white;
     border-color: #ededed;
     border-style: solid;
@@ -3829,7 +3829,7 @@ table.x-datepicker-inner {
 
 /* line 294, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-with-row-lines .x-grid-cell-inner {
-  line-height: 13px;
+  line-height: 20px;
   padding-bottom: 4px; }
 
 /* line 300, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -4095,7 +4095,7 @@ browsers will do whacky things with it.
 .x-grid-cell-row-checker .x-grid-cell-inner {
   padding-top: 4px;
   padding-bottom: 2px;
-  line-height: 14px; }
+  line-height: 24px; }
 
 /* line 591, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-with-row-lines .x-grid-cell-row-checker .x-grid-cell-inner {
@@ -4230,7 +4230,7 @@ browsers will do whacky things with it.
     margin-left: -4px; }
   /* line 741, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
   .x-grid-row-editor .x-form-display-field {
-    font: normal 11px/15px tahoma, arial, verdana, sans-serif;
+    font: normal 14px/25px tahoma, arial, verdana, sans-serif;
     padding-top: 0;
     padding-left: 2px; }
   /* line 747, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -4244,7 +4244,7 @@ browsers will do whacky things with it.
   text-align: center; }
 /* line 760, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-editor .x-form-trigger, .x-grid-row-editor .x-form-trigger {
-  height: 19px; }
+  height: 29px; }
 /* line 764, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-editor .x-form-trigger-wrap .x-form-spinner-up, .x-grid-editor .x-form-trigger-wrap .x-form-spinner-down, .x-grid-row-editor .x-form-trigger-wrap .x-form-spinner-up, .x-grid-row-editor .x-form-trigger-wrap .x-form-spinner-down {
   background-image: url('../../lib/ext/resources/themes/images/gray/form/spinner-small.gif');
@@ -4252,17 +4252,17 @@ browsers will do whacky things with it.
 
 /* line 771, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-editor .x-form-text, .x-grid-row-editor .x-form-text {
-  font: normal 11px/15px tahoma, arial, verdana, sans-serif;
-  height: 18px; }
+  font: normal 14px/25px tahoma, arial, verdana, sans-serif;
+  height: 28px; }
 
 /* line 779, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-border-box .x-grid-editor .x-form-trigger,
 .x-border-box .x-grid-row-editor .x-form-trigger {
-  height: 20px; }
+  height: 30px; }
 /* line 782, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-border-box .x-grid-editor .x-form-text,
 .x-border-box .x-grid-row-editor .x-form-text {
-  height: 20px;
+  height: 30px;
   padding-bottom: 1px; }
 
 /* line 790, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -4282,11 +4282,11 @@ browsers will do whacky things with it.
 .x-strict .x-ie6 .x-grid-row-editor .x-form-text,
 .x-strict .x-ie7 .x-grid-editor .x-form-text,
 .x-strict .x-ie7 .x-grid-row-editor .x-form-text {
-  height: 17px; }
+  height: 27px; }
 
 /* line 812, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-quirks .x-ie9 .x-grid-editor .x-form-text, .x-quirks .x-ie9 .x-grid-row-editor .x-form-text {
-  line-height: 17px; }
+  line-height: 27px; }
 
 /* line 821, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-opera .x-grid-editor .x-form-text {
@@ -7421,7 +7421,7 @@ textarea.x-form-invalid-field {
   background-image: -moz-linear-gradient(top, #dfdede, #d2d2d2);
   background-image: -o-linear-gradient(top, #dfdede, #d2d2d2);
   background-image: linear-gradient(top, #dfdede, #d2d2d2);
-  font-size: 11px; }
+  font-size: 14px; }
 
 /* line 80, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-nlg .x-tab-bar {
@@ -7443,38 +7443,38 @@ textarea.x-form-invalid-field {
 /* Top Tabs */
 /* line 4, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-top .x-tab-bar-body {
-  height: 20px;
+  height: 35px;
   border-width: 1px 1px 0;
   padding: 1px 0 3px; }
 /* line 10, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-top .x-tab-bar-strip {
   /*position strip from top rather than bottom to avoid off-by-one error in IE6*/
-  top: 22px;
+  top: 37px;
   border-width: 1px 1px 0;
   height: 2px; }
 
 /* line 19, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-top .x-tab-bar-body {
-  height: 25px; }
+  height: 40px; }
 /* line 23, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-top .x-tab-bar-strip {
   height: 3px; }
 
 /* line 4, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-top .x-tab-bar-body-default-plain {
-  height: 20px;
+  height: 35px;
   border-width: 0;
   padding: 0 0 2px; }
 /* line 10, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-top .x-tab-bar-strip-default-plain {
   /*position strip from top rather than bottom to avoid off-by-one error in IE6*/
-  top: 20px;
+  top: 35px;
   border-width: 1px 1px 0 1px;
   height: 2px; }
 
 /* line 19, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-top .x-tab-bar-body-default-plain {
-  height: 22px; }
+  height: 37px; }
 /* line 23, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-top .x-tab-bar-strip-default-plain {
   height: 3px; }
@@ -7482,7 +7482,7 @@ textarea.x-form-invalid-field {
 /* Bottom Tabs */
 /* line 32, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-bottom .x-tab-bar-body {
-  height: 20px;
+  height: 35px;
   border-width: 0 1px 1px;
   padding: 3px 0 1px; }
   /* line 37, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
@@ -7493,7 +7493,7 @@ textarea.x-form-invalid-field {
   .x-tab-bar-bottom .x-tab-bar-body .x-box-scroller,
   .x-tab-bar-bottom .x-tab-bar-body .x-box-scroller-left,
   .x-tab-bar-bottom .x-tab-bar-body .x-box-scroller-right {
-    height: 22px; }
+    height: 37px; }
 /* line 49, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-bottom .x-tab-bar-strip {
   top: 0;
@@ -7502,14 +7502,14 @@ textarea.x-form-invalid-field {
 
 /* line 57, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-bottom .x-tab-bar-body {
-  height: 25px; }
+  height: 40px; }
 /* line 61, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-bottom .x-tab-bar-strip {
   height: 3px; }
 
 /* line 32, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-bottom .x-tab-bar-body-default-plain {
-  height: 20px;
+  height: 35px;
   border-width: 0;
   padding: 3px 0 0; }
   /* line 37, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
@@ -7520,7 +7520,7 @@ textarea.x-form-invalid-field {
   .x-tab-bar-bottom .x-tab-bar-body-default-plain .x-box-scroller,
   .x-tab-bar-bottom .x-tab-bar-body-default-plain .x-box-scroller-left,
   .x-tab-bar-bottom .x-tab-bar-body-default-plain .x-box-scroller-right {
-    height: 21px; }
+    height: 36px; }
 /* line 49, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-tab-bar-bottom .x-tab-bar-strip-default-plain {
   top: 0;
@@ -7529,7 +7529,7 @@ textarea.x-form-invalid-field {
 
 /* line 57, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-bottom .x-tab-bar-body-default-plain {
-  height: 23px; }
+  height: 38px; }
 /* line 61, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-border-box .x-tab-bar-bottom .x-tab-bar-strip-default-plain {
   height: 3px; }
@@ -7549,19 +7549,19 @@ textarea.x-form-invalid-field {
 
 /* line 69, ../../lib/ext/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-tab-default-top {
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
   -moz-border-radius-bottomright: 0;
   -webkit-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0;
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
-  padding: 3px 3px 0 3px;
+  padding: 5px 5px 0 5px;
   border-width: 1px 1px 0 1px;
   border-style: solid;
   background-image: none;
@@ -7587,7 +7587,7 @@ textarea.x-form-invalid-field {
   -o-border-radius: 0px;
   border-radius: 0px;
   background-color: transparent;
-  background-position: 1100404px 1000000px; }
+  background-position: 1100606px 1000000px; }
 /* line 147, ../../lib/ext/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-tab-default-top-tl,
 .x-nbr .x-tab-default-top-bl,
@@ -7691,7 +7691,7 @@ textarea.x-form-invalid-field {
   zoom: 1;
   *display: inline;
   white-space: nowrap;
-  height: 20px;
+  height: 35px;
   border-color: #b5b5b5;
   cursor: pointer;
   cursor: hand; }
@@ -7711,7 +7711,7 @@ textarea.x-form-invalid-field {
     padding: 0;
     margin: 0;
     -webkit-appearance: none;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
     font-family: tahoma, arial, verdana, sans-serif;
     color: #6f6f6f;
@@ -7738,10 +7738,10 @@ textarea.x-form-invalid-field {
 
 /* line 93, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-border-box .x-tab-default-top {
-  height: 21px; }
+  height: 36px; }
 /* line 96, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-border-box .x-tab-default-bottom {
-  height: 21px; }
+  height: 36px; }
 
 /* line 103, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 * html .x-ie .x-tab button {
@@ -7766,17 +7766,17 @@ textarea.x-form-invalid-field {
   border-bottom: 1px solid #d0d0d0 !important; }
   /* line 134, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
   .x-tab-default-top em {
-    padding-bottom: 3px; }
+    padding-bottom: 5px; }
   /* line 139, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
   .x-tab-default-top button,
   .x-tab-default-top .x-tab-inner {
-    height: 13px;
-    line-height: 13px; }
+    height: 24px;
+    line-height: 24px; }
 
 /* line 148, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-safari4 .x-tab-default-top .x-tab-inner,
 .x-safari5_0 .x-tab-default-top .x-tab-inner {
-  line-height: 11px; }
+  line-height: 22px; }
 
 /* line 153, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-default-top {
@@ -7801,8 +7801,8 @@ textarea.x-form-invalid-field {
   /* line 183, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
   .x-tab-default-bottom button,
   .x-tab-default-bottom .x-tab-inner {
-    height: 13px;
-    line-height: 13px; }
+    height: 28px;
+    line-height: 28px; }
 
 /* line 189, ../../lib/ext/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-default-bottom {
@@ -8975,7 +8975,7 @@ svg, vml {
     width: 18px;
     position: relative;
     cursor: pointer;
-    height: 20px;
+    height: 35px;
     background: transparent no-repeat -18px 0;
     background-image: url('../../lib/ext/resources/themes/images/gray/tab-bar/scroll-left.gif'); }
   /* line 208, ../../lib/ext/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
@@ -9019,7 +9019,7 @@ svg, vml {
     width: 18px;
     position: relative;
     cursor: pointer;
-    height: 20px;
+    height: 35px;
     background: transparent no-repeat 0 0;
     background-image: url('../../lib/ext/resources/themes/images/gray/tab-bar/scroll-right.gif'); }
   /* line 256, ../../lib/ext/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
