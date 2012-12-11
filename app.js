@@ -1,6 +1,6 @@
 
 //Ext.....
-Ext.Loader.setPath('Ext', 'lib/ext/src');
+Ext.Loader.setPath('Ext', 'lib/extjs-4.2.0/src');
 Ext.require('Ext.util.History');
 Ext.require('Ext.data.*.Json');
 Ext.require('Ext.layout.container.Border');
